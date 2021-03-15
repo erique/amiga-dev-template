@@ -1,0 +1,24 @@
+name: Amiga
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+    container: trixitron/m68k-amigaos-gcc
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install amitools
+        run: apt install -y pip && pip install amitools
+
+      - name: Build and test
+        run: make test
