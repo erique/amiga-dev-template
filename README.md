@@ -29,7 +29,7 @@ int main(int argc, const char* argv[])
 
 ### Usage
 ```
-$ make
+$ make || ./docker.sh make 
 VERSION     = 1.0
 GIT         = e2017d1
 
