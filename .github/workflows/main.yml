@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install amitools
-        run: apt install -y pip && pip install amitools
+        run: apt update && apt install -y pip && pip install amitools
 
       - name: Build and test
         run: make test
